@@ -1,0 +1,36 @@
+version: "3.8"
+
+services:
+  postgres:
+    image: postgres:14
+    container_name: postgres_db
+    restart: always
+    environment:
+      POSTGRES_USER: maxtarasov
+      POSTGRES_PASSWORD: 33lafori
+      POSTGRES_DB: devittestdb
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  backend:
+    build: ./devitserver
+    container_name: backend_app
+    depends_on:
+      - postgres
+    environment:
+      DATABASE_URL: postgres://maxtarasov:33lafori@postgres:5432/devittestdb
+    ports:
+      - "3000:3000"
+
+  frontend:
+    build: ./devitapp
+    container_name: frontend_app
+    depends_on:
+      - backend
+    ports:
+      - "5173:5173"
+
+volumes:
+  pgdata:
