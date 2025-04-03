@@ -3,9 +3,9 @@
 ### 1. Clone the Repository
 First, clone the project to your local machine:
 
-git clone https://github.com/your_username/project_name.git
+git clone git@github.com:tarasoffy/devittest.git
 
-cd project_name
+cd devittest
 
 git checkout first-commit
 
