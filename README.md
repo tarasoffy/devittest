@@ -4,7 +4,10 @@
 First, clone the project to your local machine:
 
 git clone https://github.com/your_username/project_name.git
+
 cd project_name
+
+git checkout first-commit
 
 ### 2. Use Docker to build and run the containers for the backend, frontend, and database:
 docker-compose up --build
