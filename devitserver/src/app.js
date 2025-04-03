@@ -7,7 +7,7 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
-// app.use(limiter);
+app.use(limiter);
 app.use("/api", routes);
 
 module.exports = app;
